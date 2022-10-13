@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Player;
-use Illuminate\Http\Request;
+use App\Models\Matche;
+use Illuminate\Http\Request; 
 
-class PlayerController extends Controller
+use function PHPUnit\Framework\matches;
+
+class MatcheController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,16 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        $data['players'] = Player::all();
-        return view('player', $data)->with('no', 1);
+        $data['lists'] = Matche::all();
+        return view('match', $data)->with('no', 1);
+
+
+    }
+
+    public function matchinfo($id)
+    {
+        $data['list'] = Matche::find($id);
+        return view('matchinfo',$data);
     }
 
     /**
@@ -42,10 +52,10 @@ class PlayerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Player  $player
+     * @param  \App\Models\Matche  $matche
      * @return \Illuminate\Http\Response
      */
-    public function show(Player $player)
+    public function show(Matche $matche)
     {
         //
     }
@@ -53,10 +63,10 @@ class PlayerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Player  $player
+     * @param  \App\Models\Matche  $matche
      * @return \Illuminate\Http\Response
      */
-    public function edit(Player $player)
+    public function edit(Matche $matche)
     {
         //
     }
@@ -65,10 +75,10 @@ class PlayerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Player  $player
+     * @param  \App\Models\Matche  $matche
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Player $player)
+    public function update(Request $request, Matche $matche)
     {
         //
     }
@@ -76,10 +86,10 @@ class PlayerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Player  $player
+     * @param  \App\Models\Matche  $matche
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Player $player)
+    public function destroy(Matche $matche)
     {
         //
     }

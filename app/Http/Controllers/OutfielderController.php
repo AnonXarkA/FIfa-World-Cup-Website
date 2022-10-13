@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Player;
+use App\Models\Outfielder;
 use Illuminate\Http\Request;
 
-class PlayerController extends Controller
+class OutfielderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        $data['players'] = Player::all();
-        return view('player', $data)->with('no', 1);
+        //
     }
 
     /**
@@ -42,10 +41,10 @@ class PlayerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Player  $player
+     * @param  \App\Models\Outfielder  $outfielder
      * @return \Illuminate\Http\Response
      */
-    public function show(Player $player)
+    public function show(Outfielder $outfielder)
     {
         //
     }
@@ -53,10 +52,10 @@ class PlayerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Player  $player
+     * @param  \App\Models\Outfielder  $outfielder
      * @return \Illuminate\Http\Response
      */
-    public function edit(Player $player)
+    public function edit(Outfielder $outfielder)
     {
         //
     }
@@ -65,10 +64,10 @@ class PlayerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Player  $player
+     * @param  \App\Models\Outfielder  $outfielder
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Player $player)
+    public function update(Request $request, Outfielder $outfielder)
     {
         //
     }
@@ -76,10 +75,10 @@ class PlayerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Player  $player
+     * @param  \App\Models\Outfielder  $outfielder
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Player $player)
+    public function destroy(Outfielder $outfielder)
     {
         //
     }

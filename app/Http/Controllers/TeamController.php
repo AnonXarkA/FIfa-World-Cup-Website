@@ -14,7 +14,9 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        $data['team1'] = Team::where('Groups', 'A')->orderBy('no_of_w', 'desc')->get();
+        $data['team2'] = Team::where('Groups', 'B')->orderBy('no_of_w', 'desc')->get();
+        return view('group', $data)->with('no', 1);
     }
 
     /**
@@ -22,9 +24,12 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function teaminfo()
     {
-        //
+        $data['team'] = Team::orderBy('Rank', 'ASC')->get();
+        
+        // $data['team1'] = Team::orderBy('name', 'ASC')->get();
+        return view('teaminfo',$data);
     }
 
     /**
